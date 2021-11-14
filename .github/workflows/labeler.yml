@@ -9,7 +9,7 @@ on:
       - .github/workflows/labeler.yml
       - .github/labels.yml
 
-jobsaaaa:
+jobs:
   labeler:
     runs-on: ubuntu-latest
 
