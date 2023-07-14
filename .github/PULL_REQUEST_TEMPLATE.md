@@ -8,7 +8,7 @@
 - Please write test results with a link to the detailed results log.
 
 ## Scope of influence
-- e.g., `The` behavior of a ** feature changes.`
+- e.g., The` behavior of a ** feature changes.`
 
 ## Supplements
 - Please write supplements if you need them.
