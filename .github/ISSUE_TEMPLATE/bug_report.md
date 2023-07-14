@@ -7,31 +7,28 @@ assignees: ''
 
 ---
 
-## 概要
-ひとことで
+## Details
+### Description
+What kind of bug?
 
-## 詳細
-### 詳細症状
-どういうバグか
+### Conditions of occurrence
+The environment in which the bug occurs, the condition, parameters, etc.
 
-### 発生条件
-発生した環境，症状，パラメタなど
+### Additional information
+Please add files, links, or others if they exist.
 
-###  追加資料
-あればリンクなどを貼る
+## Tasks
+- [ ] Fix xxx
+- [ ] Do yyy
 
-## 必要な作業
-- [ ] あれして
-- [ ] これする
+## Scope of influence
+- e.g., `All tools are not working.`
 
-## 影響範囲
-tool類が全部死ぬ... みたいな
+## Supplements
+- Please write supplements if you need them.
 
-## 補足
-何かれば
-
-## 注意
-- 関連する Projects が存在する場合，それの紐付けを行うこと
-- 可能ならば `priority` ラベルを付けること
-- 可能ならば Assignees を設定すること
-- close するときは結論を明記すること
+## Notes
+- Please tie the related project if it exists.
+- Please set `Assignees`.
+- Please set a `priority` label.
+- Please write the conclusion before close the issue.
