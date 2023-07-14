@@ -6,12 +6,20 @@
   color: "F0F0F0"
   description: "Improvements or additions to documentation"
 
+- name: ":sparkles: enhancement"
+  description: "New feature or request"
+  color: "F0F0F0"
+  
 - name: ":beginner: good first issue"
   description: "Good for newcomers"
   color: "F0F0F0"
 
 - name: ":question: question"
   description: "Further information is requested"
+  color: "F0F0F0"
+
+- name: ":ice_cube: icebox"
+  description: "icebox or pending"
   color: "F0F0F0"
 
 - name: ":rocket: priority::high"
