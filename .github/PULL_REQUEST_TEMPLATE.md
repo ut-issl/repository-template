@@ -1,23 +1,20 @@
-## 概要
-ひとことで
-
 ## Issue
-- 関連する issue
+- Please mention related issues.
 
-## 詳細
-詳しく
+## Details
+- Please write details of the PR.
 
-## 検証結果
-test へのリンクや，検証結果へのリンク
+## Test Results
+- Please write test results with a link to the detailed results log.
 
-## 影響範囲
-XX系の動作がガラッと変わる，とか．
+## Scope of influence
+- e.g., `The` behavior of a ** feature changes.`
 
-## 補足
-何かあれば
+## Supplements
+- Please write supplements if you need them.
 
-## 注意
-- 関連する Projects が存在する場合，それの紐付けを行うこと
-- Assignees を設定すること
-- 可能ならば Reviewers を設定すること
-- 可能ならば `priority` ラベルを付けること
+## Notes
+- Please tie the related project if it exists.
+- Please set `Assignees`.
+- Please set `Reviewers`.
+- Please set a `priority` label.
