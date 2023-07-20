@@ -19,5 +19,5 @@ _Provide any supplementary information._
 ## Notes
 - _Link the issue to any related projects if applicable._
 - _Assign the appropriate member(s) to this issue as `Assignees` if possible._
-- Please set a `priority` label.
+- _Apply a `priority` label._
 - Please write the conclusion before close the issue.
