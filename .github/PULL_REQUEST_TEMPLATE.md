@@ -14,7 +14,7 @@ _Describe the scope of influence of the changes, e.g., `The behavior of feature 
 _Provide any supplementary information._
 
 ## Notes
-- Please tie the related project if it exists.
+- _Link the issue to any related projects if applicable._
 - _Assign the appropriate member(s) to this pull request as `Assignees`._
 - Please set `Reviewers`.
 - Please set a `priority` label.
