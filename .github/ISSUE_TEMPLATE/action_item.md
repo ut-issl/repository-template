@@ -17,7 +17,7 @@ _Provide the conditions that must be met for the issue to be closed._
 _Provide any supplementary information._
 
 ## Notes
-- Please tie the related project if it exists.
+- _Link the issue to any related projects if applicable._
 - Please set `Assignees`.
 - Please set a `priority` label.
 - Please write the conclusion before close the issue.
