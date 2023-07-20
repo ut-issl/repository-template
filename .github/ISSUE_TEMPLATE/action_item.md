@@ -11,7 +11,7 @@ assignees: ''
 _Provide a detailed description of the issue._
 
 ## Closing conditions
-Please write conditions of close the issue.
+_Provide the conditions that must be met for the issue to be closed._
 
 ## Supplements
 - Please write supplements if you need them.
