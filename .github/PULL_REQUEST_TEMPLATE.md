@@ -1,5 +1,5 @@
 ## Related issues
-- Please mention related issues.
+_Mention any issues that this pull request is related (e.g., #1). Consider using the `development` field if you want to close the issue automatically when this pull request is merged._
 
 ## Details
 - Please write details of the PR.
