@@ -2,7 +2,7 @@
 _Mention any issues that this pull request is related (e.g., #1). Consider using the `development` field if you want to close the issue automatically when this pull request is merged._
 
 ## Description
-- Please write details of the PR.
+_Provide a detailed description of this pull request._
 
 ## Test Results
 - Please write test results with a link to the detailed results log.
