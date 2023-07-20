@@ -22,7 +22,7 @@ _Provide any relevant files, links, etc. if available._
 - [ ] Do yyy
 
 ## Impact
-- e.g., `All tools are not working.`
+_Describe the scope of the bug's influence, e.g., `All tools are not working.`_
 
 ## Supplements
 - Please write supplements if you need them.
