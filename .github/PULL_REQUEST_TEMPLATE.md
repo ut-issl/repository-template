@@ -10,7 +10,7 @@ _Provide the test results and a link to the detailed results log._
 ## Impact
 _Describe the scope of influence of the changes, e.g., `The behavior of feature ** changes.`_
 
-## Supplements
+## Supplementary information
 - Please write supplements if you need them.
 
 ## Notes
