@@ -5,7 +5,7 @@ _Mention any issues that this pull request is related (e.g., #1). Consider using
 _Provide a detailed description of this pull request._
 
 ## Test results
-- Please write test results with a link to the detailed results log.
+_Provide the test results and a link to the detailed results log._
 
 ## Scope of influence
 - e.g., `The behavior of a ** feature changes.`
