@@ -18,6 +18,6 @@ _Provide any supplementary information._
 
 ## Notes
 - _Link the issue to any related projects if applicable._
-- Please set `Assignees`.
+- _Assign the appropriate member(s) to this issue as `Assignees` if possible._
 - Please set a `priority` label.
 - Please write the conclusion before close the issue.
