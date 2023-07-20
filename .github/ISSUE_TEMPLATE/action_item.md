@@ -14,7 +14,7 @@ _Provide a detailed description of the issue._
 _Provide the conditions that must be met for the issue to be closed._
 
 ## Supplementary information
-- Please write supplements if you need them.
+_Provide any supplementary information._
 
 ## Notes
 - Please tie the related project if it exists.
