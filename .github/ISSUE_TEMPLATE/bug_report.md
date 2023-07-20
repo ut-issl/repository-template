@@ -28,7 +28,7 @@ _Describe the scope of the bug's influence, e.g., `All tools are not working.`_
 _Provide any extra notes if necessary._
 
 ## Notes
-- Please tie the related project if it exists.
+- _Link the issue to any related projects if applicable._
 - Please set `Assignees`.
 - Please set a `priority` label.
 - Please write the conclusion before close the issue.
