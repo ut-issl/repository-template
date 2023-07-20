@@ -10,7 +10,7 @@ assignees: ''
 ## Details
 _Provide a detailed description of the issue._
 
-## Conditions of close
+## Closing conditions
 Please write conditions of close the issue.
 
 ## Supplements
