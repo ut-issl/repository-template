@@ -12,7 +12,7 @@ assignees: ''
 _Describe the bug in detail._
 
 ### Conditions of occurrence
-The environment in which the bug occurs, the condition, parameters, etc.
+_Describe the environment, conditions, parameters, etc. under which the bug occurred._
 
 ### Additional information
 Please add files, links, or others if they exist.
