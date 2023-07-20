@@ -31,4 +31,4 @@ _Provide any extra notes if necessary._
 - _Link the issue to any related projects if applicable._
 - _Assign the appropriate member(s) to this issue as `Assignees` if possible._
 - _Apply a `priority` label._
-- Please write the conclusion before close the issue.
+- _Provide a conclusion before closing the issue._
