@@ -24,7 +24,7 @@ _Provide any relevant files, links, etc. if available._
 ## Impact
 _Describe the scope of the bug's influence, e.g., `All tools are not working.`_
 
-## Supplements
+## Supplementary notes
 - Please write supplements if you need them.
 
 ## Notes
