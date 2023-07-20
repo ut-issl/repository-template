@@ -15,6 +15,6 @@ _Provide any supplementary information._
 
 ## Notes
 - Please tie the related project if it exists.
-- Please set `Assignees`.
+- _Assign the appropriate member(s) to this pull request as `Assignees`._
 - Please set `Reviewers`.
 - Please set a `priority` label.
