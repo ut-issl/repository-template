@@ -25,7 +25,7 @@ _Provide any relevant files, links, etc. if available._
 _Describe the scope of the bug's influence, e.g., `All tools are not working.`_
 
 ## Supplementary notes
-- Please write supplements if you need them.
+_Provide any extra notes if necessary._
 
 ## Notes
 - Please tie the related project if it exists.
