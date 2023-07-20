@@ -15,7 +15,7 @@ _Describe the bug in detail._
 _Describe the environment, conditions, parameters, etc. under which the bug occurred._
 
 ### Additional information
-Please add files, links, or others if they exist.
+_Provide any relevant files, links, etc. if available._
 
 ## Tasks
 - [ ] Fix xxx
