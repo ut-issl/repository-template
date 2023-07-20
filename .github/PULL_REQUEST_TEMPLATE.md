@@ -8,7 +8,7 @@ _Provide a detailed description of this pull request._
 _Provide the test results and a link to the detailed results log._
 
 ## Impact
-- e.g., `The behavior of a ** feature changes.`
+_Describe the scope of influence of the changes, e.g., `The behavior of feature ** changes.`_
 
 ## Supplements
 - Please write supplements if you need them.
