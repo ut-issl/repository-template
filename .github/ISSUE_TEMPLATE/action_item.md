@@ -1,6 +1,6 @@
 ---
 name: Action Item
-about: Template for AI
+about: Create an action item
 title: ''
 labels: ''
 assignees: ''
