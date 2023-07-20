@@ -9,7 +9,7 @@ assignees: ''
 
 ## Details
 ### Description
-What kind of bug?
+_Describe the bug in detail._
 
 ### Conditions of occurrence
 The environment in which the bug occurs, the condition, parameters, etc.
