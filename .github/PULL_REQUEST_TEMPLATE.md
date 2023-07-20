@@ -11,7 +11,7 @@ _Provide the test results and a link to the detailed results log._
 _Describe the scope of influence of the changes, e.g., `The behavior of feature ** changes.`_
 
 ## Supplementary information
-- Please write supplements if you need them.
+_Provide any supplementary information._
 
 ## Notes
 - Please tie the related project if it exists.
