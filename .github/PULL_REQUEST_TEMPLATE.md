@@ -7,7 +7,7 @@ _Provide a detailed description of this pull request._
 ## Test results
 _Provide the test results and a link to the detailed results log._
 
-## Scope of influence
+## Impact
 - e.g., `The behavior of a ** feature changes.`
 
 ## Supplements
