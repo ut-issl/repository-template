@@ -1,4 +1,4 @@
-## Issue
+## Related issues
 - Please mention related issues.
 
 ## Details
