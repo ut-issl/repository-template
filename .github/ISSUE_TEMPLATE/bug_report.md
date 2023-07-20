@@ -21,7 +21,7 @@ _Provide any relevant files, links, etc. if available._
 - [ ] Fix xxx
 - [ ] Do yyy
 
-## Scope of influence
+## Impact
 - e.g., `All tools are not working.`
 
 ## Supplements
