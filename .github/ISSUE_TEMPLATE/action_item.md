@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ## Details
-Please write details of the issue.
+_Provide a detailed description of the issue._
 
 ## Conditions of close
 Please write conditions of close the issue.
