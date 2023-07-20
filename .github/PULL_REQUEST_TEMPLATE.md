@@ -4,7 +4,7 @@ _Mention any issues that this pull request is related (e.g., #1). Consider using
 ## Description
 _Provide a detailed description of this pull request._
 
-## Test Results
+## Test results
 - Please write test results with a link to the detailed results log.
 
 ## Scope of influence
