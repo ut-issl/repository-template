@@ -17,4 +17,4 @@ _Provide any supplementary information._
 - _Link the issue to any related projects if applicable._
 - _Assign the appropriate member(s) to this pull request as `Assignees`._
 - Please set `Reviewers`.
-- Please set a `priority` label.
+- _Apply the `priority` label._
