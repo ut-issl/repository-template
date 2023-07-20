@@ -16,5 +16,5 @@ _Provide any supplementary information._
 ## Notes
 - _Link the issue to any related projects if applicable._
 - _Assign the appropriate member(s) to this pull request as `Assignees`._
-- Please set `Reviewers`.
+- _Select `Reviewers` for this pull request._
 - _Apply the `priority` label._
