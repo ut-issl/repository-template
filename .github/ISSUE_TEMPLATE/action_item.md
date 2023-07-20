@@ -13,7 +13,7 @@ _Provide a detailed description of the issue._
 ## Closing conditions
 _Provide the conditions that must be met for the issue to be closed._
 
-## Supplements
+## Supplementary information
 - Please write supplements if you need them.
 
 ## Notes
