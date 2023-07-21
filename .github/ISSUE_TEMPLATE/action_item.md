@@ -1,26 +1,23 @@
 ---
 name: Action Item
-about: AI 管理用テンプレート
+about: Create an action item
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-## 概要
-ひとことで
+## Details
+_Provide a detailed description of the issue._
 
-## 詳細
-詳しく
+## Closing conditions
+_Provide the conditions that must be met for the issue to be closed._
 
-## close条件
-どうなったらcloseできるか
+## Supplementary information
+_Provide any supplementary information._
 
-## 備考
-なにかあれば
-
-## 注意
-- 関連する Projects が存在する場合，それの紐付けを行うこと
-- 可能ならば `priority` ラベルを付けること
-- 可能ならば Assignees を設定すること
-- close するときは結論を明記すること
+## Notes
+- _Link the issue to any related projects if applicable._
+- _Assign the appropriate member(s) to this issue as `Assignees` if possible._
+- _Apply a `priority` label._
+- _Provide a conclusion before closing the issue._

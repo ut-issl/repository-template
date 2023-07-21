@@ -2,36 +2,33 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: ''
+labels: [':bug: bug']
 assignees: ''
 
 ---
 
-## 概要
-ひとことで
+## Details
+### Description
+_Describe the bug in detail._
 
-## 詳細
-### 詳細症状
-どういうバグか
+### Conditions of occurrence
+_Describe the environment, conditions, parameters, etc. under which the bug occurred._
 
-### 発生条件
-発生した環境，症状，パラメタなど
+### Additional information
+_Provide any relevant files, links, etc. if available._
 
-###  追加資料
-あればリンクなどを貼る
+## Tasks
+- [ ] Fix xxx
+- [ ] Do yyy
 
-## 必要な作業
-- [ ] あれして
-- [ ] これする
+## Impact
+_Describe the scope of the bug's influence, e.g., `All tools are not working.`_
 
-## 影響範囲
-tool類が全部死ぬ... みたいな
+## Supplementary notes
+_Provide any extra notes if necessary._
 
-## 補足
-何かれば
-
-## 注意
-- 関連する Projects が存在する場合，それの紐付けを行うこと
-- 可能ならば `priority` ラベルを付けること
-- 可能ならば Assignees を設定すること
-- close するときは結論を明記すること
+## Notes
+- _Link the issue to any related projects if applicable._
+- _Assign the appropriate member(s) to this issue as `Assignees` if possible._
+- _Apply a `priority` label._
+- _Provide a conclusion before closing the issue._

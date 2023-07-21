@@ -1,23 +1,20 @@
-## 概要
-ひとことで
+## Related issues
+_Mention any issues that this pull request is related (e.g., #1). Consider using the `development` field if you want to close the issue automatically when this pull request is merged._
 
-## Issue
-- 関連する issue
+## Description
+_Provide a detailed description of this pull request._
 
-## 詳細
-詳しく
+## Test results
+_Provide the test results and a link to the detailed results log._
 
-## 検証結果
-test へのリンクや，検証結果へのリンク
+## Impact
+_Describe the scope of influence of the changes, e.g., `The behavior of feature ** changes.`_
 
-## 影響範囲
-XX系の動作がガラッと変わる，とか．
+## Supplementary information
+_Provide any supplementary information._
 
-## 補足
-何かあれば
-
-## 注意
-- 関連する Projects が存在する場合，それの紐付けを行うこと
-- Assignees を設定すること
-- 可能ならば Reviewers を設定すること
-- 可能ならば `priority` ラベルを付けること
+## Notes
+- _Link the issue to any related projects if applicable._
+- _Assign the appropriate member(s) to this pull request as `Assignees`._
+- _Select `Reviewers` for this pull request._
+- _Apply the `priority` label._
