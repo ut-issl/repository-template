@@ -106,3 +106,20 @@
 - name: "sys::SW"
   description: "ソフトウェア"
   color: "D4C5F9"
+
+- name: ":satellite: WINGS"
+  description: "Web-based INterface Ground-station Software"
+  color: "F0F0F0"
+
+# TAGラベル（不要なものはリポジトリごとに削除してください）
+- name: "tag::formal-methods"
+  description: "Formal Methods TAG"
+  color: "FF7A00"
+
+- name: "tag::autonomy"
+  description: "Autonomy TAG"
+  color: "00B8FF"
+
+- name: "tag::inference"
+  description: "Inference TAG"
+  color: "7A5CFF"
