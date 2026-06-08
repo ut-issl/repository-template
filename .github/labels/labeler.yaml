@@ -1,12 +1,12 @@
 ---
-":gear: ci":
+"ci :gear:":
   - changed-files:
       - any-glob-to-any-file: [".github/workflows/**"]
 
-":hook: pre-commit":
+"pre-commit :hook:":
   - changed-files:
       - any-glob-to-any-file: [".pre-commit-config.yaml"]
 
-":notebook: documentation":
+"documentation :notebook:":
   - changed-files:
       - any-glob-to-any-file: "**/*.md"
