@@ -87,11 +87,10 @@ jobs:
           fail_level: error
 
       - name: Run zizmor
-        env:
-          ZIZMOR_NO_ONLINE_AUDITS: 'true'
         uses: zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d # v0.5.6
         with:
           version: 'v1.24.1'
+          online-audits: false
           advanced-security: false  # set to true on public repos to upload SARIF to GitHub code scanning
 
   validate-renovate-config:
