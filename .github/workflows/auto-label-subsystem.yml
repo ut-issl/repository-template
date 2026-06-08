@@ -8,4 +8,8 @@ on:
 
 jobs:
   auto-label:
-    uses: ut-issl/se-team-hub/.github/workflows/auto-label-subsystem.yml@main
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    uses: ut-issl/se-team-hub/.github/workflows/auto-label-subsystem.yml@main  # zizmor: ignore[unpinned-uses] internal reusable workflow
