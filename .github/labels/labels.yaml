@@ -35,21 +35,37 @@
   description: "priority medium"
   color: "FEF2C0"
 
-- name: ":whale: major update"
+- name: ":whale: update::major"
   color: "F9D0C4"
   description: "Major update"
 
-- name: ":dolphin: minor update"
+- name: ":dolphin: update::minor"
   color: "FEF2C0"
   description: "Minor update"
 
-- name: ":fish: patch"
+- name: ":fish: update::patch"
   color: "C2E0C6"
-  description: "Patch Update"
+  description: "Patch update"
 
-- name: ":wrench: tools"
-  description: "Tools"
-  color: "F0F0F0"
+- name: ":gear: ci"
+  description: "Changes to CI workflows"
+  color: "FFD580"
+
+- name: ":hook: pre-commit"
+  description: "Changes to pre-commit hooks"
+  color: "FFD580"
+
+- name: ":robot: automated"
+  description: "Automated issue or pull request"
+  color: "D6D6D6"
+
+- name: ":package: dependencies"
+  description: "Update dependencies"
+  color: "D6D6D6"
+
+- name: ":bookmark: versioning"
+  description: "Versioning changes"
+  color: "D6D6D6"
 
 # 系ラベル（不要なものはリポジトリごとに削除してください）
 - name: "sys::構造"

@@ -1,9 +1,11 @@
 ---
-":wrench: tools":
+":gear: ci":
   - changed-files:
-      - any-glob-to-any-file:
-          - ".github/workflows/**"
-          - ".pre-commit-config.yaml"
+      - any-glob-to-any-file: [".github/workflows/**"]
+
+":hook: pre-commit":
+  - changed-files:
+      - any-glob-to-any-file: [".pre-commit-config.yaml"]
 
 ":notebook: documentation":
   - changed-files:
