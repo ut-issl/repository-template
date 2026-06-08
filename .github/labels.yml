@@ -107,9 +107,6 @@
   description: "ソフトウェア"
   color: "D4C5F9"
 
-- name: ":satellite: WINGS"
-  description: "Web-based INterface Ground-station Software"
-  color: "F0F0F0"
 
 # TAGラベル（不要なものはリポジトリごとに削除してください）
 - name: "tag::formal-methods"
