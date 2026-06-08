@@ -5,7 +5,3 @@ rules:
       policies:
         # Allow same-org internal reusable workflows referenced by branch (e.g. @main)
         ut-issl/*: ref-pin
-  ref-confusion:
-    ignore:
-      - auto-label-subsystem.yaml
-      - close-set-iteration.yaml
