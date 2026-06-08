@@ -1,0 +1,10 @@
+---
+":wrench: tools":
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".pre-commit-config.yaml"
+
+":notebook: documentation":
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
