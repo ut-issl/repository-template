@@ -4,12 +4,11 @@ General-purpose repository template for the ISSL organization.
 
 ## [Required] configure CODEOWNERS
 
-You must update [.github/CODEOWNERS](.github/CODEOWNERS) before publishing a repository created from
-this template. The shipped file uses `@your-username` as a placeholder, which does not resolve to
-any real account.
+You must update [.github/CODEOWNERS](.github/CODEOWNERS) before publishing a repository created from this template.
+The shipped file uses `@your-username` as a placeholder, which does not resolve to any real account.
 
-- Replace `@your-username` on the default `*` line with the actual owner — a real user
-  (`@person`) or a team (`@ut-issl/<team-slug>`).
+- Replace `@your-username` on the default `*` line with the actual owner —
+  a real user (`@person`) or a team (`@ut-issl/<team-slug>`).
 - Add path-specific overrides as needed, for example:
 
   ```text
@@ -22,8 +21,7 @@ for the full syntax.
 
 ## Pre-commit setup
 
-This template uses [prek](https://prek.j178.dev) (a faster drop-in replacement for
-[pre-commit](https://pre-commit.com)).
+This template uses [prek](https://prek.j178.dev), a faster drop-in replacement for [pre-commit](https://pre-commit.com).
 
 ```console
 prek install --hook-type pre-commit --hook-type pre-push
@@ -33,13 +31,15 @@ If you prefer `pre-commit`, substitute `pre-commit` for `prek` in the command ab
 
 ## Opt-in features
 
-By default only `lint-gh-actions` (GitHub Actions workflow lint) and `check-prek` (runs the
-pre-commit hooks) run on PRs; everything else is disabled. Enable any of the below if you want them.
+By default only `lint-gh-actions` (GitHub Actions workflow lint) and `check-prek` (runs the pre-commit hooks)
+run on PRs; everything else is disabled.
+Enable any of the below if you want them.
 
 ### Additional CI jobs
 
-The following jobs are commented out in [ci.yaml](.github/workflows/ci.yaml). Uncomment the
-corresponding block to enable each one. Each job runs only when the relevant files change.
+The following jobs are commented out in [ci.yaml](.github/workflows/ci.yaml).
+Uncomment the corresponding block to enable each one.
+Each job runs only when the relevant files change.
 
 - [`validate-renovate-config`](.github/workflows/ci.yaml#L96) — validate the Renovate config
 - [`lint-markdown`](.github/workflows/ci.yaml#L122) — lint Markdown files
@@ -51,8 +51,8 @@ corresponding block to enable each one. Each job runs only when the relevant fil
 ### Conventional Commits enforcement (Commitizen)
 
 Enforces [Conventional Commits](https://www.conventionalcommits.org) on commit messages and PR titles
-via [commitizen](https://github.com/commitizen-tools/commitizen). Once enabled, all commits and PR
-titles must follow the spec.
+via [commitizen](https://github.com/commitizen-tools/commitizen).
+Once enabled, all commits and PR titles must follow the spec.
 
 Uncomment both blocks:
 
@@ -68,16 +68,15 @@ cz commit
 
 ### zizmor advanced security upload
 
-The `lint-gh-actions` job runs [zizmor](https://github.com/zizmorcore/zizmor) with
-`advanced-security: false`, which skips uploading the SARIF report to GitHub code scanning.
-On **public** repositories, change `false` to `true` at
-[ci.yaml#L94](.github/workflows/ci.yaml#L94) to surface findings in the Security tab. Private
-repositories require GitHub Advanced Security to enable the upload.
+The `lint-gh-actions` job runs [zizmor](https://github.com/zizmorcore/zizmor) with `advanced-security: false`,
+which skips uploading the SARIF report to GitHub code scanning.
+On **public** repositories, change `false` to `true` at [ci.yaml#L94](.github/workflows/ci.yaml#L94)
+to surface findings in the Security tab.
+Private repositories require GitHub Advanced Security to enable the upload.
 
 ### Renovate
 
-[Renovate](https://docs.renovatebot.com) is preconfigured in
-[.github/renovate.json5](.github/renovate.json5) to track Action SHAs, pinned tool versions inside
-[ci.yaml](.github/workflows/ci.yaml), and pre-commit hooks. To opt in, remove the `enabled: false,`
-line at [renovate.json5#L3](.github/renovate.json5#L3) (or change it to `true`) and make sure the
-Renovate GitHub App is installed for the repository.
+[Renovate](https://docs.renovatebot.com) is preconfigured in [.github/renovate.json5](.github/renovate.json5)
+to track Action SHAs, pinned tool versions inside [ci.yaml](.github/workflows/ci.yaml), and pre-commit hooks.
+To opt in, remove the `enabled: false,` line at [renovate.json5#L3](.github/renovate.json5#L3)
+(or change it to `true`) and make sure the Renovate GitHub App is installed for the repository.
