@@ -2,6 +2,24 @@
 
 General-purpose repository template for the ISSL organization.
 
+## [Required] configure CODEOWNERS
+
+You must update [.github/CODEOWNERS](.github/CODEOWNERS) before publishing a repository created from
+this template. The shipped file uses `@your-username` as a placeholder, which does not resolve to
+any real account.
+
+- Replace `@your-username` on the default `*` line with the actual owner — a real user
+  (`@person`) or a team (`@ut-issl/<team-slug>`).
+- Add path-specific overrides as needed, for example:
+
+  ```text
+  .github/        @infra-manager
+  docs/           @docs-manager
+  ```
+
+See the [GitHub docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+for the full syntax.
+
 ## Pre-commit setup
 
 This template uses [prek](https://prek.j178.dev) (a faster drop-in replacement for
