@@ -108,7 +108,6 @@
   description: "ソフトウェア"
   color: "D4C5F9"
 
-
 # TAGラベル（不要なものはリポジトリごとに削除してください）
 - name: "tag::formal-methods"
   description: "Formal Methods TAG"

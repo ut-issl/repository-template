@@ -7,12 +7,12 @@ on:
       - main
     paths:
       - '.github/workflows/sync-labels.yaml'
-      - '.github/labels.yml'
+      - '.github/labels/labels.yaml'
   pull_request:
     types: [opened, synchronize, reopened, labeled]
     paths:
       - '.github/workflows/sync-labels.yaml'
-      - '.github/labels.yml'
+      - '.github/labels/labels.yaml'
 
 jobs:
 
@@ -33,6 +33,6 @@ jobs:
         uses: crazy-max/ghaction-github-labeler@548a7c3603594ec17c819e1239f281a3b801ab4d # v6.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          yaml-file: .github/labels.yml
+          yaml-file: .github/labels/labels.yaml
           skip-delete: false
           dry-run: false
