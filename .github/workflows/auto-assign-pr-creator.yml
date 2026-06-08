@@ -1,0 +1,9 @@
+name: Auto Assign PR Creator
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  assign:
+    uses: ut-issl/se-team-hub/.github/workflows/auto-assign-pr-creator.yml@main
