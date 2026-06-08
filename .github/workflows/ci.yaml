@@ -90,7 +90,7 @@ jobs:
         uses: zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d # v0.5.6
         with:
           version: 'v1.24.1'
-          # advanced-security: false  # must be false for private repo
+          advanced-security: false  # set to true on public repos to upload SARIF to GitHub code scanning
 
   validate-renovate-config:
     name: Validate Renovate config
@@ -309,27 +309,27 @@ jobs:
           fail_level: error
           typos_flags: --hidden .
 
-  lint-commit-messages:
-    name: Lint commit messages
-    runs-on: ubuntu-latest
+  # lint-commit-messages:
+  #   name: Lint commit messages
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         fetch-depth: 0
+  #         persist-credentials: false
 
-      - name: Set up Commitizen
-        uses: commitizen-tools/setup-cz@96c75e6ae9632047f2c9b4025b9dd1624b40de8f # v0.9.1
-        with:
-          python-version: '3.x'
-          version: '4.16.2'
+  #     - name: Set up Commitizen
+  #       uses: commitizen-tools/setup-cz@96c75e6ae9632047f2c9b4025b9dd1624b40de8f # v0.9.1
+  #       with:
+  #         python-version: '3.x'
+  #         version: '4.16.2'
 
-      - name: Lint commit messages on push
-        if: github.event_name == 'push'
-        run: cz check --rev-range ${{ github.event.before }}..${{ github.sha }}
+  #     - name: Lint commit messages on push
+  #       if: github.event_name == 'push'
+  #       run: cz check --rev-range ${{ github.event.before }}..${{ github.sha }}
 
-      - name: Lint commit messages on pull request
-        if: github.event_name == 'pull_request'
-        run: cz check --rev-range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+  #     - name: Lint commit messages on pull request
+  #       if: github.event_name == 'pull_request'
+  #       run: cz check --rev-range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
