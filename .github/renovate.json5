@@ -1,0 +1,186 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  enabled: false,  // set to true (or remove) to opt in to Renovate updates
+  extends: [
+    'config:best-practices',
+  ],
+  minimumReleaseAge: '3 days',
+  customManagers: [
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/.*\\.ya?ml$/',
+      ],
+      matchStrings: [
+        "uses: commitizen-tools/setup-cz@(?<prefix>[a-f0-9]{40}[^\\n]*\\n(?:\\s+with:\\n(?:\\s+[^\\n]+\\n)*?)\\s+version: ')(?<currentValue>[^'\\s]+)'",
+      ],
+      autoReplaceStringTemplate: "uses: commitizen-tools/setup-cz@{{{prefix}}}{{{newValue}}}'",
+      datasourceTemplate: 'pypi',
+      depNameTemplate: 'commitizen',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        'github\\.com/rhysd/actionlint/cmd/actionlint@(?<currentDigest>[a-f0-9]{40}) # (?<currentValue>v[^\\s]+)',
+      ],
+      autoReplaceStringTemplate: 'github.com/rhysd/actionlint/cmd/actionlint@{{{newDigest}}} # {{{newValue}}}',
+      datasourceTemplate: 'github-tags',
+      depNameTemplate: 'rhysd/actionlint',
+      versioningTemplate: 'semver',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        'renovate@(?<currentValue>\\S+)',
+      ],
+      datasourceTemplate: 'npm',
+      depNameTemplate: 'renovate',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        'markdownlint-cli2@(?<currentValue>\\S+)',
+      ],
+      datasourceTemplate: 'npm',
+      depNameTemplate: 'markdownlint-cli2',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        "uses: reviewdog/action-setup@(?<prefix>[a-f0-9]{40}[^\\n]*\\n(?:\\s+with:\\n(?:\\s+[^\\n]+\\n)*?)\\s+reviewdog_version: ')(?<currentValue>[^'\\s]+)'",
+      ],
+      autoReplaceStringTemplate: "uses: reviewdog/action-setup@{{{prefix}}}{{{newValue}}}'",
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'reviewdog/reviewdog',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        'json5@(?<currentValue>\\S+)',
+      ],
+      datasourceTemplate: 'npm',
+      depNameTemplate: 'json5',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        "uses: tombi-toml/setup-tombi@(?<prefix>[a-f0-9]{40}[^\\n]*\\n(?:\\s+with:\\n(?:\\s+[^\\n]+\\n)*?)\\s+version: ')(?<currentValue>[^'\\s]+)'",
+      ],
+      autoReplaceStringTemplate: "uses: tombi-toml/setup-tombi@{{{prefix}}}{{{newValue}}}'",
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'tombi-toml/tombi',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        'yamllint==(?<currentValue>[^"\\s]+)',
+      ],
+      datasourceTemplate: 'pypi',
+      depNameTemplate: 'yamllint',
+    },
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^\\.github/workflows/ci\\.ya?ml$/',
+      ],
+      matchStrings: [
+        "uses: j178/prek-action@(?<prefix>[a-f0-9]{40}[^\\n]*\\n(?:\\s+with:\\n(?:\\s+[^\\n]+\\n)*?)\\s+prek-version: ')(?<currentValue>[^'\\s]+)'",
+      ],
+      autoReplaceStringTemplate: "uses: j178/prek-action@{{{prefix}}}{{{newValue}}}'",
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'j178/prek',
+    },
+  ],
+  packageRules: [
+    {
+      matchFileNames: [
+        '.github/workflows/**',
+      ],
+      addLabels: [
+        'ci :gear:',
+      ],
+    },
+    {
+      matchManagers: [
+        'pre-commit',
+      ],
+      addLabels: [
+        'pre-commit :hook:',
+      ],
+    },
+    {
+      matchFileNames: [
+        '.github/workflows/**',
+      ],
+      matchUpdateTypes: [
+        'patch',
+      ],
+      // automerge: true,
+    },
+    {
+      matchDepNames: [
+        'renovate',
+      ],
+      matchFileNames: [
+        '.github/workflows/ci.yaml',
+        '.github/workflows/ci.yml',
+      ],
+      extends: [
+        'schedule:weekly',
+      ],
+    },
+    {
+      matchDepNames: [
+        'renovate',
+      ],
+      matchFileNames: [
+        '.github/workflows/ci.yaml',
+        '.github/workflows/ci.yml',
+      ],
+      matchUpdateTypes: [
+        'minor',
+      ],
+      // automerge: true,
+    },
+    {
+      matchManagers: [
+        'pre-commit',
+      ],
+      matchUpdateTypes: [
+        'patch',
+      ],
+      // automerge: true,
+    },
+  ],
+  'git-submodules': {
+    enabled: true,
+  },
+  'pre-commit': {
+    enabled: true,
+  },
+  labels: [
+    'automated :robot:',
+    'dependencies :package:',
+  ],
+}
