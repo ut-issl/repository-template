@@ -50,71 +50,59 @@
   description: "Tools"
   color: "F0F0F0"
 
-- name: ":artificial_satellite: C2A"
-  description: "Command Centric Architecture"
-  color: "F0F0F0"
-
-- name: ":ringed_planet: S2E"
-  description: "Spacecraft Simulation Environment"
-  color: "F0F0F0"
-
-- name: ":satellite: WINGS"
-  description: "Web-based INterface Ground-station Software"
-  color: "F0F0F0"
-
 # 系ラベル（不要なものはリポジトリごとに削除してください）
-- name: "sys:構造"
+- name: "sys::構造"
   description: "構造系"
   color: "D4C5F9"
 
-- name: "sys:熱"
+- name: "sys::熱"
   description: "熱系"
   color: "D4C5F9"
 
-- name: "sys:電源"
+- name: "sys::電源"
   description: "電源系"
   color: "D4C5F9"
 
-- name: "sys:通信"
+- name: "sys::通信"
   description: "通信系"
   color: "D4C5F9"
 
-- name: "sys:CDH"
+- name: "sys::CDH"
   description: "CDH系（コマンド・データ処理）"
   color: "D4C5F9"
 
-- name: "sys:姿勢"
+- name: "sys::姿勢"
   description: "姿勢制御系"
   color: "D4C5F9"
 
-- name: "sys:軌道"
+- name: "sys::軌道"
   description: "軌道系"
   color: "D4C5F9"
 
-- name: "sys:推進"
+- name: "sys::推進"
   description: "推進系"
   color: "D4C5F9"
 
-- name: "sys:地上"
+- name: "sys::地上"
   description: "地上系"
   color: "D4C5F9"
 
-- name: "sys:PL"
+- name: "sys::PL"
   description: "ペイロード・ミッション機器"
   color: "D4C5F9"
 
-- name: "sys:電装"
+- name: "sys::電装"
   description: "電装系"
   color: "D4C5F9"
 
-- name: "sys:システム"
+- name: "sys::システム"
   description: "システム系"
   color: "D4C5F9"
 
-- name: "sys:SE"
+- name: "sys::SE"
   description: "システムズエンジニアリング"
   color: "D4C5F9"
 
-- name: "sys:SW"
+- name: "sys::SW"
   description: "ソフトウェア"
   color: "D4C5F9"
