@@ -7,5 +7,5 @@ rules:
         ut-issl/*: ref-pin
   ref-confusion:
     ignore:
-      - auto-label-subsystem.yml
-      - close-set-iteration.yml
+      - auto-label-subsystem.yaml
+      - close-set-iteration.yaml
