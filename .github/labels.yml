@@ -1,3 +1,4 @@
+---
 - name: ":bug: bug"
   color: "F9D0C4"
   description: "Something isn't working"
@@ -9,7 +10,7 @@
 - name: ":sparkles: enhancement"
   description: "New feature or request"
   color: "F0F0F0"
-  
+
 - name: ":beginner: good first issue"
   description: "Good for newcomers"
   color: "F0F0F0"

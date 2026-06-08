@@ -15,5 +15,10 @@ rules:
     ignore: |
       .github/workflows/*.yml
       .github/workflows/*.yaml
+  comments-indentation:
+    ignore: |
+      .github/workflows/*.yml
+      .github/workflows/*.yaml
+      .pre-commit-config.yaml
   line-length:
     max: 120
