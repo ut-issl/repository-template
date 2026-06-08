@@ -1,54 +1,71 @@
-- name: ":bug: bug"
+---
+- name: "bug :bug:"
   color: "F9D0C4"
   description: "Something isn't working"
 
-- name: ":notebook: documentation"
+- name: "documentation :notebook:"
   color: "F0F0F0"
   description: "Improvements or additions to documentation"
 
-- name: ":sparkles: enhancement"
+- name: "enhancement :sparkles:"
   description: "New feature or request"
   color: "F0F0F0"
-  
-- name: ":beginner: good first issue"
+
+- name: "good first issue :beginner:"
   description: "Good for newcomers"
   color: "F0F0F0"
 
-- name: ":question: question"
+- name: "question :question:"
   description: "Further information is requested"
   color: "F0F0F0"
 
-- name: ":ice_cube: icebox"
+- name: "icebox :ice_cube:"
   description: "icebox or pending"
   color: "F0F0F0"
 
-- name: ":rocket: priority::high"
+- name: "priority::high :rocket:"
   description: "priority high"
   color: "F9D0C4"
 
-- name: ":car: priority::low"
+- name: "priority::low :car:"
   description: "priority low"
   color: "C2E0C6"
 
-- name: ":airplane: priority::medium"
+- name: "priority::medium :airplane:"
   description: "priority medium"
   color: "FEF2C0"
 
-- name: ":whale: major update"
+- name: "update::major :whale:"
   color: "F9D0C4"
   description: "Major update"
 
-- name: ":dolphin: minor update"
+- name: "update::minor :dolphin:"
   color: "FEF2C0"
   description: "Minor update"
 
-- name: ":fish: patch"
+- name: "update::patch :fish:"
   color: "C2E0C6"
-  description: "Patch Update"
+  description: "Patch update"
 
-- name: ":wrench: tools"
-  description: "Tools"
-  color: "F0F0F0"
+- name: "ci :gear:"
+  description: "Changes to CI workflows"
+  color: "FFD580"
+
+- name: "pre-commit :hook:"
+  description: "Changes to pre-commit hooks"
+  color: "FFD580"
+
+- name: "automated :robot:"
+  description: "Automated issue or pull request"
+  color: "D6D6D6"
+
+- name: "dependencies :package:"
+  description: "Update dependencies"
+  color: "D6D6D6"
+
+- name: "versioning :bookmark:"
+  description: "Versioning changes"
+  color: "D6D6D6"
 
 # 系ラベル（不要なものはリポジトリごとに削除してください）
 - name: "sys::構造"
@@ -106,7 +123,6 @@
 - name: "sys::SW"
   description: "ソフトウェア"
   color: "D4C5F9"
-
 
 # TAGラベル（不要なものはリポジトリごとに削除してください）
 - name: "tag::formal-methods"
