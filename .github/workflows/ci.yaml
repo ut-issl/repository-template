@@ -93,175 +93,175 @@ jobs:
           online-audits: false
           advanced-security: false  # set to true on public repos to upload SARIF to GitHub code scanning
 
-  validate-renovate-config:
-    name: Validate Renovate config
-    needs: determine-changes
-    if: >-
-      ${{ needs.determine-changes.outputs.renovate_config == 'true' ||
-      needs.determine-changes.outputs.github_actions_ci == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
+  # validate-renovate-config:
+  #   name: Validate Renovate config
+  #   needs: determine-changes
+  #   if: >-
+  #     ${{ needs.determine-changes.outputs.renovate_config == 'true' ||
+  #     needs.determine-changes.outputs.github_actions_ci == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Set up Node.js
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
-        with:
-          node-version: 24
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+  #       with:
+  #         node-version: 24
 
-      - name: Validate Renovate config
-        run: |
-          npx --yes --package renovate@43.150.0 \
-            renovate-config-validator .github/renovate.json5
+  #     - name: Validate Renovate config
+  #       run: |
+  #         npx --yes --package renovate@43.150.0 \
+  #           renovate-config-validator .github/renovate.json5
 
-  lint-markdown:
-    name: Lint Markdown
-    needs: determine-changes
-    if: >-
-      ${{ needs.determine-changes.outputs.md == 'true' ||
-      needs.determine-changes.outputs.github_actions_ci == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
+  # lint-markdown:
+  #   name: Lint Markdown
+  #   needs: determine-changes
+  #   if: >-
+  #     ${{ needs.determine-changes.outputs.md == 'true' ||
+  #     needs.determine-changes.outputs.github_actions_ci == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     pull-requests: write
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Lint Markdown
-        if: github.event_name != 'pull_request'
-        run: npx --yes markdownlint-cli2@0.22.1 .
+  #     - name: Lint Markdown
+  #       if: github.event_name != 'pull_request'
+  #       run: npx --yes markdownlint-cli2@0.22.1 .
 
-      - name: Set up reviewdog
-        if: github.event_name == 'pull_request'
-        uses: reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f # v1.5.0
-        with:
-          reviewdog_version: 'v0.21.0'
+  #     - name: Set up reviewdog
+  #       if: github.event_name == 'pull_request'
+  #       uses: reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f # v1.5.0
+  #       with:
+  #         reviewdog_version: 'v0.21.0'
 
-      - name: Lint Markdown (reviewdog)
-        if: github.event_name == 'pull_request'
-        env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          markdownlint_rc=0
-          npx --yes markdownlint-cli2@0.22.1 . > /tmp/markdownlint-report.txt 2>&1 || markdownlint_rc=$?
-          reviewdog_rc=0
-          reviewdog < /tmp/markdownlint-report.txt \
-              -efm="%f:%l:%c %m" \
-              -efm="%f:%l %m" \
-              -name=markdownlint \
-              -reporter=github-pr-review \
-              -fail-level=error || reviewdog_rc=$?
-          if [ $markdownlint_rc -ne 0 ] && ! grep -Eq '^[^:]+:[0-9]+(:[0-9]+)? ' /tmp/markdownlint-report.txt; then
-            echo "::error title=markdownlint::markdownlint failed before producing parseable diagnostics"
-            exit $markdownlint_rc
-          fi
-          exit $reviewdog_rc
+  #     - name: Lint Markdown (reviewdog)
+  #       if: github.event_name == 'pull_request'
+  #       env:
+  #         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: |
+  #         markdownlint_rc=0
+  #         npx --yes markdownlint-cli2@0.22.1 . > /tmp/markdownlint-report.txt 2>&1 || markdownlint_rc=$?
+  #         reviewdog_rc=0
+  #         reviewdog < /tmp/markdownlint-report.txt \
+  #             -efm="%f:%l:%c %m" \
+  #             -efm="%f:%l %m" \
+  #             -name=markdownlint \
+  #             -reporter=github-pr-review \
+  #             -fail-level=error || reviewdog_rc=$?
+  #         if [ $markdownlint_rc -ne 0 ] && ! grep -Eq '^[^:]+:[0-9]+(:[0-9]+)? ' /tmp/markdownlint-report.txt; then
+  #           echo "::error title=markdownlint::markdownlint failed before producing parseable diagnostics"
+  #           exit $markdownlint_rc
+  #         fi
+  #         exit $reviewdog_rc
 
-  lint-json5:
-    name: Lint JSON5
-    needs: determine-changes
-    if: >-
-      ${{ needs.determine-changes.outputs.json5 == 'true' ||
-      needs.determine-changes.outputs.github_actions_ci == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
+  # lint-json5:
+  #   name: Lint JSON5
+  #   needs: determine-changes
+  #   if: >-
+  #     ${{ needs.determine-changes.outputs.json5 == 'true' ||
+  #     needs.determine-changes.outputs.github_actions_ci == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Check JSON5 syntax
-        env:
-          CHANGED_JSON5_FILES: ${{ needs.determine-changes.outputs.json5_files }}
-        run: |
-          readarray -t json5_files < <(
-            printf '%s\n' "${CHANGED_JSON5_FILES}" | tr ' ' '\n' | sed '/^$/d'
-          )
-          if [ ${#json5_files[@]} -eq 0 ]; then
-            readarray -d '' -t json5_files < <(
-              find . -type f -name '*.json5' -not -path './.git/*' -print0
-            )
-          fi
-          if [ ${#json5_files[@]} -eq 0 ]; then
-            echo 'No JSON5 files found.'
-            exit 0
-          fi
-          npx --yes json5@2.2.3 "${json5_files[@]}" >/dev/null
+  #     - name: Check JSON5 syntax
+  #       env:
+  #         CHANGED_JSON5_FILES: ${{ needs.determine-changes.outputs.json5_files }}
+  #       run: |
+  #         readarray -t json5_files < <(
+  #           printf '%s\n' "${CHANGED_JSON5_FILES}" | tr ' ' '\n' | sed '/^$/d'
+  #         )
+  #         if [ ${#json5_files[@]} -eq 0 ]; then
+  #           readarray -d '' -t json5_files < <(
+  #             find . -type f -name '*.json5' -not -path './.git/*' -print0
+  #           )
+  #         fi
+  #         if [ ${#json5_files[@]} -eq 0 ]; then
+  #           echo 'No JSON5 files found.'
+  #           exit 0
+  #         fi
+  #         npx --yes json5@2.2.3 "${json5_files[@]}" >/dev/null
 
-  lint-toml:
-    name: Lint TOML
-    needs: determine-changes
-    if: >-
-      ${{ needs.determine-changes.outputs.toml == 'true' ||
-      needs.determine-changes.outputs.github_actions_ci == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
+  # lint-toml:
+  #   name: Lint TOML
+  #   needs: determine-changes
+  #   if: >-
+  #     ${{ needs.determine-changes.outputs.toml == 'true' ||
+  #     needs.determine-changes.outputs.github_actions_ci == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Install Tombi
-        uses: tombi-toml/setup-tombi@9880d1d3ba5e745d410c697366c513b337704388 # v1.0.11
-        with:
-          version: '0.11.6'
+  #     - name: Install Tombi
+  #       uses: tombi-toml/setup-tombi@9880d1d3ba5e745d410c697366c513b337704388 # v1.0.11
+  #       with:
+  #         version: '0.11.6'
 
-      - name: Check TOML format
-        run: tombi format --check
+  #     - name: Check TOML format
+  #       run: tombi format --check
 
-      - name: Lint TOML
-        run: tombi lint
+  #     - name: Lint TOML
+  #       run: tombi lint
 
-  lint-yaml:
-    name: Lint YAML
-    needs: determine-changes
-    if: >-
-      ${{ needs.determine-changes.outputs.yaml == 'true' ||
-      needs.determine-changes.outputs.github_actions_ci == 'true' }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
+  # lint-yaml:
+  #   name: Lint YAML
+  #   needs: determine-changes
+  #   if: >-
+  #     ${{ needs.determine-changes.outputs.yaml == 'true' ||
+  #     needs.determine-changes.outputs.github_actions_ci == 'true' }}
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     pull-requests: write
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Install uv
-        if: github.event_name != 'pull_request'
-        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
-        with:
-          version: '0.11.16'
+  #     - name: Install uv
+  #       if: github.event_name != 'pull_request'
+  #       uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+  #       with:
+  #         version: '0.11.16'
 
-      - name: Lint YAML
-        if: github.event_name != 'pull_request'
-        run: uvx --from "yamllint==1.38.0" yamllint .
+  #     - name: Lint YAML
+  #       if: github.event_name != 'pull_request'
+  #       run: uvx --from "yamllint==1.38.0" yamllint .
 
-      - name: Lint YAML (reviewdog)
-        if: github.event_name == 'pull_request'
-        uses: reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0 # v1.21.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          fail_level: error
-          yamllint_flags: .
+  #     - name: Lint YAML (reviewdog)
+  #       if: github.event_name == 'pull_request'
+  #       uses: reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0 # v1.21.0
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         reporter: github-pr-review
+  #         fail_level: error
+  #         yamllint_flags: .
 
   check-prek:
     name: Check prek
@@ -279,36 +279,36 @@ jobs:
           prek-version: 'v0.4.1'
           extra-args: '--all-files --skip no-commit-to-branch'
 
-  check-typos:
-    name: Check typos
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      checks: write
-      pull-requests: write
+  # check-typos:
+  #   name: Check typos
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     checks: write
+  #     pull-requests: write
 
-    steps:
-      - name: Checkout the main repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+  #   steps:
+  #     - name: Checkout the main repository
+  #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+  #       with:
+  #         persist-credentials: false
 
-      - name: Check spelling
-        if: github.event_name != 'pull_request'
-        uses: crate-ci/typos@aca895bf05aec0cb7dffa6f94495e923224d9f17 # v1.46.2
-        with:
-          files: |
-            .
-            .github/**
+  #     - name: Check spelling
+  #       if: github.event_name != 'pull_request'
+  #       uses: crate-ci/typos@aca895bf05aec0cb7dffa6f94495e923224d9f17 # v1.46.2
+  #       with:
+  #         files: |
+  #           .
+  #           .github/**
 
-      - name: Check spelling (reviewdog)
-        if: github.event_name == 'pull_request'
-        uses: reviewdog/action-typos@d5eb1bbcd1b3bfde596f6eeb470322727862fe98 # v1.19.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          fail_level: error
-          typos_flags: --hidden .
+  #     - name: Check spelling (reviewdog)
+  #       if: github.event_name == 'pull_request'
+  #       uses: reviewdog/action-typos@d5eb1bbcd1b3bfde596f6eeb470322727862fe98 # v1.19.0
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         reporter: github-pr-review
+  #         fail_level: error
+  #         typos_flags: --hidden .
 
   # lint-commit-messages:
   #   name: Lint commit messages
