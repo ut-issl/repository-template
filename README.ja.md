@@ -5,9 +5,8 @@ ISSL organization 向けの汎用リポジトリテンプレートです。
 ## 【必須】CODEOWNERS の設定
 
 このテンプレートからリポジトリを作成したら，まず [.github/CODEOWNERS](.github/CODEOWNERS) を更新してください。
-同梱されているファイルではプレースホルダーとして `@your-username` を使っていますが，このアカウントは実在しません。
 
-- 既定の `*` 行にある `@your-username` を実際のオーナー（実在するユーザー `@person` またはチーム `@ut-issl/<team-slug>`）に置き換える
+- 既定の `*` 行のコメントを外し，`@your-username` を実際のオーナー（実在するユーザー `@person` またはチーム `@ut-issl/<team-slug>`）に置き換える
 - 必要に応じて，以下の例のようにパスごとの上書きを追加する
 
   ```text

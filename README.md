@@ -5,9 +5,8 @@ General-purpose repository template for the ISSL organization.
 ## [Required] Configure CODEOWNERS
 
 You must update [.github/CODEOWNERS](.github/CODEOWNERS) right after creating a repository from this template.
-The shipped file uses `@your-username` as a placeholder, which does not resolve to any real account.
 
-- Replace `@your-username` on the default `*` line with the actual owner —
+- Uncomment the default `*` line and replace `@your-username` with the actual owner —
   a real user (`@person`) or a team (`@ut-issl/<team-slug>`).
 - Add path-specific overrides as needed, for example:
 
