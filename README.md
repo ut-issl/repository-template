@@ -67,14 +67,6 @@ uv tool install commitizen
 cz commit
 ```
 
-### zizmor Advanced Security Upload
-
-The `lint-gh-actions` job runs [zizmor](https://github.com/zizmorcore/zizmor) with `advanced-security: false`,
-which skips uploading the SARIF report to GitHub code scanning.
-On **public** repositories, change `false` to `true` at [ci.yaml#L94](.github/workflows/ci.yaml#L94)
-to surface findings in the Security tab.
-Private repositories require GitHub Advanced Security to enable the upload.
-
 ### Renovate
 
 [Renovate](https://docs.renovatebot.com) is preconfigured in [.github/renovate.json5](.github/renovate.json5)

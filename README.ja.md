@@ -66,14 +66,6 @@ uv tool install commitizen
 cz commit
 ```
 
-### zizmor の advanced security アップロード
-
-`lint-gh-actions` ジョブは [zizmor](https://github.com/zizmorcore/zizmor) を `advanced-security: false` で実行しており，
-SARIF レポートの GitHub code scanning へのアップロードは行いません。
-**public** リポジトリでは，[ci.yaml#L94](.github/workflows/ci.yaml#L94) の `false` を `true` に変更すると
-検出結果を Security タブに表示できます。
-private リポジトリでアップロードを有効化するには，GitHub Advanced Security が必要です。
-
 ### Renovate
 
 [Renovate](https://docs.renovatebot.com) は [.github/renovate.json5](.github/renovate.json5) で事前設定されており，
