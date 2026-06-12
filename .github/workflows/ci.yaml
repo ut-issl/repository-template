@@ -91,7 +91,12 @@ jobs:
         with:
           version: 'v1.24.1'
           online-audits: false
-          advanced-security: false  # set to true on public repos to upload SARIF to GitHub code scanning
+          advanced-security: >-
+            ${{
+              github.event.repository.private == false &&
+              (github.event_name != 'pull_request' ||
+              github.event.pull_request.head.repo.full_name == github.repository)
+            }}
 
   # validate-renovate-config:
   #   name: Validate Renovate config
