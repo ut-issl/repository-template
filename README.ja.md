@@ -39,12 +39,12 @@ prek install --hook-type pre-commit --hook-type pre-push
 対応するブロックのコメントを外すと有効になります。
 各ジョブは関連するファイルが変更されたときにのみ実行されます。
 
-- [`validate-renovate-config`](.github/workflows/ci.yaml#L96)：Renovate 設定の検証
-- [`lint-markdown`](.github/workflows/ci.yaml#L122)：Markdown ファイルの lint
-- [`lint-json5`](.github/workflows/ci.yaml#L169)：JSON5 ファイルの lint
-- [`lint-toml`](.github/workflows/ci.yaml#L203)：TOML ファイルの lint と format
-- [`lint-yaml`](.github/workflows/ci.yaml#L230)：YAML ファイルの lint
-- [`check-typos`](.github/workflows/ci.yaml#L282)：タイポの検出
+- [`validate-renovate-config`](.github/workflows/ci.yaml#L105-L129)：Renovate 設定の検証
+- [`lint-markdown`](.github/workflows/ci.yaml#L131-L176)：Markdown ファイルの lint
+- [`lint-json5`](.github/workflows/ci.yaml#L178-L214)：JSON5 ファイルの lint
+- [`lint-toml`](.github/workflows/ci.yaml#L216-L289)：TOML ファイルの lint と format
+- [`lint-yaml`](.github/workflows/ci.yaml#L291-L325)：YAML ファイルの lint
+- [`check-typos`](.github/workflows/ci.yaml#L343-L372)：タイポの検出
 
 ### Conventional Commits の強制（Commitizen）
 
@@ -56,8 +56,8 @@ PR タイトルの lint は，squash merge を使う場合に特に有用です
 
 以下の 2 つのブロックのコメントを外してください。
 
-- [`lint-commit-messages`（ci.yaml 内）](.github/workflows/ci.yaml#L313)
-- [`lint-pr-title`（manage-pull-requests.yaml 内）](.github/workflows/manage-pull-requests.yaml#L27)
+- [`lint-commit-messages`（ci.yaml 内）](.github/workflows/ci.yaml#L374-L397)
+- [`lint-pr-title`（manage-pull-requests.yaml 内）](.github/workflows/manage-pull-requests.yaml#L27-L42)
 
 Conventional Commits に従ったコミットメッセージを対話的に作成するには，次のコマンドを使います。
 
