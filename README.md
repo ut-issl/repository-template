@@ -40,12 +40,12 @@ The following jobs are commented out in [ci.yaml](.github/workflows/ci.yaml).
 Uncomment the corresponding block to enable each one.
 Each job runs only when the relevant files change.
 
-- [`validate-renovate-config`](.github/workflows/ci.yaml#L96) — validate the Renovate config
-- [`lint-markdown`](.github/workflows/ci.yaml#L122) — lint Markdown files
-- [`lint-json5`](.github/workflows/ci.yaml#L169) — lint JSON5 files
-- [`lint-toml`](.github/workflows/ci.yaml#L203) — lint and format TOML files
-- [`lint-yaml`](.github/workflows/ci.yaml#L230) — lint YAML files
-- [`check-typos`](.github/workflows/ci.yaml#L282) — check for typos
+- [`validate-renovate-config`](.github/workflows/ci.yaml#L105) — validate the Renovate config
+- [`lint-markdown`](.github/workflows/ci.yaml#L131) — lint Markdown files
+- [`lint-json5`](.github/workflows/ci.yaml#L178) — lint JSON5 files
+- [`lint-toml`](.github/workflows/ci.yaml#L216) — lint and format TOML files
+- [`lint-yaml`](.github/workflows/ci.yaml#L291) — lint YAML files
+- [`check-typos`](.github/workflows/ci.yaml#L343) — check for typos
 
 ### Conventional Commits Enforcement (Commitizen)
 
@@ -57,7 +57,7 @@ since the PR title becomes the subject of the squashed commit by default.
 
 Uncomment both blocks:
 
-- [`lint-commit-messages` in ci.yaml](.github/workflows/ci.yaml#L313)
+- [`lint-commit-messages` in ci.yaml](.github/workflows/ci.yaml#L374)
 - [`lint-pr-title` in manage-pull-requests.yaml](.github/workflows/manage-pull-requests.yaml#L27)
 
 To author Conventional Commits interactively:
