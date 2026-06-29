@@ -30,8 +30,7 @@ If you prefer `pre-commit`, substitute `pre-commit` for `prek` in the command ab
 
 ## Opt-in Features
 
-By default only `lint-gh-actions` (GitHub Actions workflow lint) and `check-prek` (runs the pre-commit hooks)
-run on PRs; everything else is disabled.
+By default only `lint-gh-actions` (GitHub Actions workflow lint) runs on PRs; everything else is disabled.
 Enable any of the below if you want them.
 
 ### Additional CI Jobs
@@ -40,12 +39,13 @@ The following jobs are commented out in [ci.yaml](.github/workflows/ci.yaml).
 Uncomment the corresponding block to enable each one.
 Each job runs only when the relevant files change.
 
-- [`validate-renovate-config`](.github/workflows/ci.yaml#L105-L129) — validate the Renovate config
-- [`lint-markdown`](.github/workflows/ci.yaml#L131-L176) — lint Markdown files
-- [`lint-json5`](.github/workflows/ci.yaml#L178-L214) — lint JSON5 files
-- [`lint-toml`](.github/workflows/ci.yaml#L216-L289) — lint and format TOML files
-- [`lint-yaml`](.github/workflows/ci.yaml#L291-L325) — lint YAML files
-- [`check-typos`](.github/workflows/ci.yaml#L343-L372) — check for typos
+- [`validate-renovate-config`](.github/workflows/ci.yaml#L115-L139) — validate the Renovate config
+- [`lint-markdown`](.github/workflows/ci.yaml#L141-L186) — lint Markdown files
+- [`lint-json5`](.github/workflows/ci.yaml#L188-L224) — lint JSON5 files
+- [`lint-toml`](.github/workflows/ci.yaml#L226-L299) — lint and format TOML files
+- [`lint-yaml`](.github/workflows/ci.yaml#L301-L335) — lint YAML files
+- [`check-prek`](.github/workflows/ci.yaml#L337-L351) — run the pre-commit hooks via prek (always runs, not file-gated)
+- [`check-typos`](.github/workflows/ci.yaml#L353-L382) — check for typos
 
 ### Conventional Commits Enforcement (Commitizen)
 
