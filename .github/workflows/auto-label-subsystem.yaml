@@ -6,6 +6,8 @@ on:
   pull_request:
     types: [opened]
 
+permissions: {}
+
 jobs:
   auto-label:
     permissions:
