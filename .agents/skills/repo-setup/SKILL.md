@@ -2,13 +2,23 @@
 name: repo-setup
 description: >-
   Interactive initial setup of a repository newly created from this template.
-  Use when the user asks to set up, initialize, or bootstrap the repository right after creating it from the template.
+  Use when the user asks to set up, initialize, or bootstrap the repository right after creating it from the template,
+  or proactively when the repository is still in its template state:
+  README.md still carries the template's setup instructions and .github/CODEOWNERS has no active owner line.
   Do not use for routine maintenance of an already-configured repository.
 ---
 
 # Initial Repository Setup
 
 Guide the user through the initial setup of a repository created from this template.
+
+First check that the repository is actually still in its template state:
+`.github/CODEOWNERS` contains only the commented `# * @your-username` placeholder (no active owner line),
+and `README.md` still carries the template's setup instructions.
+If setup appears to be done already, say so and stop instead of redoing it.
+If this skill was triggered proactively rather than by an explicit request,
+confirm with the user that they want to run the initial setup now before touching anything.
+
 Follow the steps below in order, one step at a time.
 Before each step, briefly explain what it does, then ask the user how to proceed.
 Never enable an opt-in feature without an explicit yes from the user; if the user declines a step, skip it and move on.
