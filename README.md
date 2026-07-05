@@ -2,6 +2,12 @@
 
 General-purpose repository template for the ISSL organization.
 
+## Agent-Assisted Setup
+
+If you use a coding agent that supports [Agent Skills](https://agentskills.io) (e.g. Codex or Claude Code),
+the `repo-setup` skill walks you through all of the setup below interactively:
+invoke it with `$repo-setup` in Codex or `/repo-setup` in Claude Code.
+
 ## [Required] Configure CODEOWNERS
 
 You must update [.github/CODEOWNERS](.github/CODEOWNERS) right after creating a repository from this template.
