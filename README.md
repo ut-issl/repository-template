@@ -39,13 +39,13 @@ The following jobs are commented out in [ci.yaml](.github/workflows/ci.yaml).
 Uncomment the corresponding block to enable each one.
 Each job runs only when the relevant files change.
 
-- [`validate-renovate-config`](.github/workflows/ci.yaml#L115-L139) — validate the Renovate config
-- [`lint-markdown`](.github/workflows/ci.yaml#L141-L186) — lint Markdown files
-- [`lint-json5`](.github/workflows/ci.yaml#L188-L224) — lint JSON5 files
-- [`lint-toml`](.github/workflows/ci.yaml#L226-L299) — lint and format TOML files
-- [`lint-yaml`](.github/workflows/ci.yaml#L301-L335) — lint YAML files
-- [`check-prek`](.github/workflows/ci.yaml#L337-L351) — run the pre-commit hooks via prek (always runs, not file-gated)
-- [`check-typos`](.github/workflows/ci.yaml#L353-L382) — check for typos
+- [`validate-renovate-config`](.github/workflows/ci.yaml#L119-L144) — validate the Renovate config
+- [`lint-markdown`](.github/workflows/ci.yaml#L146-L192) — lint Markdown files
+- [`lint-json5`](.github/workflows/ci.yaml#L194-L231) — lint JSON5 files
+- [`lint-toml`](.github/workflows/ci.yaml#L233-L307) — lint and format TOML files
+- [`lint-yaml`](.github/workflows/ci.yaml#L309-L344) — lint YAML files
+- [`check-prek`](.github/workflows/ci.yaml#L346-L361) — run the pre-commit hooks via prek (always runs, not file-gated)
+- [`check-typos`](.github/workflows/ci.yaml#L363-L389) — check for typos
 
 ### Conventional Commits Enforcement (Commitizen)
 
@@ -55,10 +55,19 @@ Once enabled, all commits and PR titles must follow the spec.
 Linting the PR title is especially useful with squash merging,
 since the PR title becomes the subject of the squashed commit by default.
 
-Uncomment both blocks:
+Uncomment all three blocks:
 
-- [`lint-commit-messages` in ci.yaml](.github/workflows/ci.yaml#L374-L397)
-- [`lint-pr-title` in manage-pull-requests.yaml](.github/workflows/manage-pull-requests.yaml#L27-L42)
+- [`lint-commit-messages` in ci.yaml](.github/workflows/ci.yaml#L391-L423)
+- [`lint-pr-title` in manage-pull-requests.yaml](.github/workflows/manage-pull-requests.yaml#L28-L44)
+- [the `commitizen` repo block in .pre-commit-config.yaml](.pre-commit-config.yaml#L55-L61)
+
+The `commitizen` hook runs at the `commit-msg` stage,
+which the install command in the pre-commit setup section above does not cover.
+Install it additionally:
+
+```console
+prek install --hook-type commit-msg
+```
 
 To author Conventional Commits interactively:
 
