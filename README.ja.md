@@ -54,10 +54,19 @@ prek install --hook-type pre-commit --hook-type pre-push
 PR タイトルの lint は，squash merge を使う場合に特に有用です
 （デフォルトでは，PR タイトルが squash 後のコミットの subject になるため）。
 
-以下の 2 つのブロックのコメントを外してください。
+以下の 3 つのブロックのコメントを外してください。
 
 - [`lint-commit-messages`（ci.yaml 内）](.github/workflows/ci.yaml#L391-L423)
 - [`lint-pr-title`（manage-pull-requests.yaml 内）](.github/workflows/manage-pull-requests.yaml#L28-L44)
+- [`commitizen` の repo ブロック（.pre-commit-config.yaml 内）](.pre-commit-config.yaml#L55-L61)
+
+`commitizen` hook は `commit-msg` stage で実行されますが，
+この stage は前述の pre-commit セットアップのコマンドではインストールされません。
+次のコマンドで追加インストールしてください。
+
+```console
+prek install --hook-type commit-msg
+```
 
 Conventional Commits に従ったコミットメッセージを対話的に作成するには，次のコマンドを使います。
 

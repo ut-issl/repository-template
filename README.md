@@ -55,10 +55,19 @@ Once enabled, all commits and PR titles must follow the spec.
 Linting the PR title is especially useful with squash merging,
 since the PR title becomes the subject of the squashed commit by default.
 
-Uncomment both blocks:
+Uncomment all three blocks:
 
 - [`lint-commit-messages` in ci.yaml](.github/workflows/ci.yaml#L391-L423)
 - [`lint-pr-title` in manage-pull-requests.yaml](.github/workflows/manage-pull-requests.yaml#L28-L44)
+- [the `commitizen` repo block in .pre-commit-config.yaml](.pre-commit-config.yaml#L55-L61)
+
+The `commitizen` hook runs at the `commit-msg` stage,
+which the install command in the pre-commit setup section above does not cover.
+Install it additionally:
+
+```console
+prek install --hook-type commit-msg
+```
 
 To author Conventional Commits interactively:
 
