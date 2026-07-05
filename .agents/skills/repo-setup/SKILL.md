@@ -68,6 +68,13 @@ If the user opts in, uncomment all of the following blocks:
 - the `lint-pr-title` job in `.github/workflows/manage-pull-requests.yaml`
 - the `commitizen` repo block in `.pre-commit-config.yaml`
 
+The `commitizen` hook runs at the `commit-msg` stage, which step 1 does not install.
+Install it additionally, with the same fallback rules as step 1:
+
+```console
+prek install --hook-type commit-msg
+```
+
 ## 5. Enable Renovate (opt-in)
 
 Explain: Renovate is preconfigured in `.github/renovate.json5` to track Action SHAs,
