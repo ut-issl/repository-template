@@ -29,8 +29,7 @@ prek install --hook-type pre-commit --hook-type pre-push
 
 ## 任意で有効化できる機能
 
-デフォルトでは，PR 上で実行されるのは `lint-gh-actions`（GitHub Actions の lint）と
-`check-prek`（pre-commit フックの実行）だけです。
+デフォルトでは，PR 上で実行されるのは `lint-gh-actions`（GitHub Actions workflow の lint）だけです。
 その他の機能は無効化されているため，必要に応じて以下から有効化してください。
 
 ### 追加の CI ジョブ
@@ -39,12 +38,13 @@ prek install --hook-type pre-commit --hook-type pre-push
 対応するブロックのコメントを外すと有効になります。
 各ジョブは関連するファイルが変更されたときにのみ実行されます。
 
-- [`validate-renovate-config`](.github/workflows/ci.yaml#L105-L129)：Renovate 設定の検証
-- [`lint-markdown`](.github/workflows/ci.yaml#L131-L176)：Markdown ファイルの lint
-- [`lint-json5`](.github/workflows/ci.yaml#L178-L214)：JSON5 ファイルの lint
-- [`lint-toml`](.github/workflows/ci.yaml#L216-L289)：TOML ファイルの lint と format
-- [`lint-yaml`](.github/workflows/ci.yaml#L291-L325)：YAML ファイルの lint
-- [`check-typos`](.github/workflows/ci.yaml#L343-L372)：タイポの検出
+- [`validate-renovate-config`](.github/workflows/ci.yaml#L119-L144)：Renovate 設定の検証
+- [`lint-markdown`](.github/workflows/ci.yaml#L146-L192)：Markdown ファイルの lint
+- [`lint-json5`](.github/workflows/ci.yaml#L194-L231)：JSON5 ファイルの lint
+- [`lint-toml`](.github/workflows/ci.yaml#L233-L307)：TOML ファイルの lint と format
+- [`lint-yaml`](.github/workflows/ci.yaml#L309-L344)：YAML ファイルの lint
+- [`check-prek`](.github/workflows/ci.yaml#L346-L361)：prek による pre-commit フックの実行（ファイル変更に関わらず常に実行）
+- [`check-typos`](.github/workflows/ci.yaml#L363-L389)：タイポの検出
 
 ### Conventional Commits の強制（Commitizen）
 
@@ -56,8 +56,8 @@ PR タイトルの lint は，squash merge を使う場合に特に有用です
 
 以下の 2 つのブロックのコメントを外してください。
 
-- [`lint-commit-messages`（ci.yaml 内）](.github/workflows/ci.yaml#L374-L397)
-- [`lint-pr-title`（manage-pull-requests.yaml 内）](.github/workflows/manage-pull-requests.yaml#L27-L42)
+- [`lint-commit-messages`（ci.yaml 内）](.github/workflows/ci.yaml#L391-L423)
+- [`lint-pr-title`（manage-pull-requests.yaml 内）](.github/workflows/manage-pull-requests.yaml#L28-L44)
 
 Conventional Commits に従ったコミットメッセージを対話的に作成するには，次のコマンドを使います。
 
