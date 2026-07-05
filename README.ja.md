@@ -6,7 +6,7 @@ ISSL organization 向けの汎用リポジトリテンプレートです。
 
 [Agent Skills](https://agentskills.io) に対応した coding agent（Codex や Claude Code など）を使っている場合，
 `repo-setup` skill が以下のセットアップ作業全体を対話的に案内します。
-Codex では `$repo-setup`，Claude Code では `/repo-setup` で呼び出せます。
+Codex では `$repo-setup in Japanese`，Claude Code では `/repo-setup in Japanese` で呼び出せます。
 
 ## 【必須】CODEOWNERS の設定
 
