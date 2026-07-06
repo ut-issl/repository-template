@@ -3,7 +3,7 @@ default_stages: [pre-commit]
 
 repos:
   - repo: https://github.com/crate-ci/typos
-    rev: aca895bf05aec0cb7dffa6f94495e923224d9f17  # frozen: v1.46.2
+    rev: bee27e3a4fd1ea2111cf90ab89cd076c870fce14  # frozen: v1.48.0
     hooks:
       - id: typos
         args: ["--force-exclude"]
