@@ -101,7 +101,7 @@
         '/^\\.github/workflows/ci\\.ya?ml$/',
       ],
       matchStrings: [
-        'rumdl==(?<currentValue>[^"\\s]+)',
+        "rvben/rumdl@[a-f0-9]{40}[^\\n]*\\n\\s*#?\\s*with:\\s*\\n\\s*#?\\s*version: '(?<currentValue>[^'\\s]+)'",
       ],
       datasourceTemplate: 'pypi',
       depNameTemplate: 'rumdl',
