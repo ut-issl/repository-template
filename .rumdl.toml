@@ -1,0 +1,6 @@
+[MD013]
+line-length = 120
+
+[per-file-ignores]
+".github/ISSUE_TEMPLATE/*.md" = ["first-line-heading"]
+".github/PULL_REQUEST_TEMPLATE.md" = ["first-line-heading"]
