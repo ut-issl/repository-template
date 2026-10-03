@@ -14,7 +14,7 @@ repos:
       - id: rumdl
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: b5c820aff664ac92018905d023a7c7e9e25ed1e4  # frozen: v1.5.8
+    rev: 8f7bbd626b6c220c7e9117ed67e559e820bcdbe1  # frozen: v1.6.0
     hooks:
       - id: tombi-format
       - id: tombi-lint
