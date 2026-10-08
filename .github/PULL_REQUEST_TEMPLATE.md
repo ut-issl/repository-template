@@ -2,6 +2,14 @@
 
 <!-- _Provide a detailed description of this pull request._ -->
 
+## AI assistance
+
+<!-- This disclosure helps reviewers understand how the change was produced. AI use is allowed;
+please describe it openly. -->
+
+- AI used: <!-- no / yes — briefly describe how -->
+- Human review of AI-assisted code: <!-- complete / partial / pending -->
+
 ## Test results
 
 <!-- _Provide the test results and a link to the detailed results log._ -->
